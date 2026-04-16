@@ -1,8 +1,8 @@
-//import { JSX } from "react";
+import { JSX } from "react";
 
 export default function Pagina() {
 
-  const paragrafos = [];
+  const paragrafos: JSX.Element[] = [];
   //const v = [1, 2, 3];  
   //const paragrafos = v.map((i) => <p>{i}</p>);
 
@@ -12,7 +12,7 @@ export default function Pagina() {
 
   return (
     <>
-      <h1>MInha Página</h1>
+      <h1>Minha Página</h1>
       {paragrafos}
       <p>dssd</p>
     </>
