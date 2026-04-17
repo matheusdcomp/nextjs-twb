@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Topo from "./componentes/topo";
+import Menu from "./componentes/menu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Topo />
-        {children}
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className='h-dvh grid grid-cols-8 grid-rows-8'>
+          <Topo />
+          <Menu />
+          <div className='col-span-7 row-span-7 p-5 overscroll-contain overflow-y-auto'>
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
